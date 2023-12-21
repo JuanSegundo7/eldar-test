@@ -1,7 +1,7 @@
 export interface IResource {
   id?: number;
   title: string;
-  body: string;
+  body?: string;
   userId: number;
 }
 
@@ -14,6 +14,6 @@ export interface IUser {
 
 export interface IUserContextType {
   user: IUser;
-  login: (userData: any) => void;
+  login: (userData: IUser) => void;
   logout: () => void;
 }

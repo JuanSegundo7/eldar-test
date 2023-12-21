@@ -1,6 +1,10 @@
+import { IResource } from "@/types/types";
 import React from "react";
+interface UserRow extends IResource {
+  onResourceClick: React.MouseEventHandler<HTMLDivElement>;
+}
 
-const UserRow = ({ id, title, userId, onResourceClick }: any) => {
+const UserRow = ({ id, title, userId, onResourceClick }: UserRow) => {
   return (
     <div
       onClick={onResourceClick}

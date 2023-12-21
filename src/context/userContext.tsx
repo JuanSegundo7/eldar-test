@@ -1,5 +1,9 @@
 import { IUser, IUserContextType } from "@/types/types";
-import { createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useContext, useState } from "react";
+
+interface UserProviderProps {
+  children: ReactNode;
+}
 
 const defaultUserContextValue: IUserContextType = {
   user: { id: null, email: "", password: "", role: "" },
@@ -9,7 +13,7 @@ const defaultUserContextValue: IUserContextType = {
 
 const UserContext = createContext(defaultUserContextValue);
 
-export const UserProvider = ({ children }: any) => {
+export const UserProvider = ({ children }: UserProviderProps) => {
   const [user, setUser] = useState<IUser>({
     id: null,
     email: "",

@@ -189,7 +189,7 @@ const Dashboard = () => {
           {(isFilter ? filterResources : resources) &&
           paginatedData &&
           paginatedData.length > 0 ? (
-            paginatedData.map((user: any) => (
+            paginatedData.map((user: IResource) => (
               <UserRow
                 onResourceClick={() => setSelectedResource(user)}
                 key={user.id}

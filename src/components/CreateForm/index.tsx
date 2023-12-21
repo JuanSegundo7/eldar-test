@@ -3,7 +3,12 @@ import { create_resource } from "@/pages/api/axios.crud";
 import { useUser } from "@/context/userContext";
 import { IResource } from "@/types/types";
 
-const CreateForm = ({ closeModal, setResource }: any) => {
+interface CreateForm {
+  closeModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setResource: React.Dispatch<React.SetStateAction<IResource[]>>;
+}
+
+const CreateForm = ({ closeModal, setResource }: CreateForm) => {
   const { user } = useUser();
 
   const [createResource, setCreateResource] = useState({ title: "", body: "" });

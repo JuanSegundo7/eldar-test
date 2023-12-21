@@ -11,22 +11,25 @@ const Form = () => {
 
   const router = useRouter();
   const { login } = useUser();
-
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
-      const res = userValidate(values);
+    onSubmit: async (values) => {
+      try {
+        const res = await userValidate(values);
 
-      if (res) {
-        login(res);
-        router.push("/dashboard");
+        if (res) {
+          login(res);
+          router.push("/dashboard");
+        } else {
+          setError("El usuario ingresado no se encuentra");
+        }
+      } catch (e) {
+        setError("El usuario ingresado no se encuentra");
       }
-
-      setError("El usuario ingresado no se encuentra");
     },
   });
 
