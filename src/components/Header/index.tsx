@@ -23,7 +23,13 @@ const Header = () => {
       <header className="bg-eldar-grey w-full flex items-center justify-center px-[24px] py-[8px]">
         <nav className="flex w-full items-center justify-between mx-auto max-w-4xl">
           <Link href="/">
-            <Image src="/imgs/logo.png" width={120} height={120} alt="logo" />
+            <Image
+              src="/imgs/logo.png"
+              width={120}
+              height={120}
+              alt="logo"
+              priority={true}
+            />
           </Link>
           {user.id ? (
             <div className="hidden items-center gap-2 md:flex">
