@@ -7,9 +7,15 @@ interface ModalProps {
   resource: IResource;
   closeModal: React.Dispatch<React.SetStateAction<IResource | null>>;
   setResource: React.Dispatch<React.SetStateAction<IResource[]>>;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Modal: React.FC<ModalProps> = ({ resource, closeModal, setResource }) => {
+const Modal = ({
+  resource,
+  closeModal,
+  setResource,
+  setCurrentPage,
+}: ModalProps) => {
   const { user } = useUser();
   const [edit, setEdit] = useState(false);
   const [editedValues, setEditedValues] = useState<IResource>({
@@ -25,6 +31,7 @@ const Modal: React.FC<ModalProps> = ({ resource, closeModal, setResource }) => {
         prevValues.filter((item) => item.id !== resource.id)
       );
       closeModal(null);
+      setCurrentPage(1);
     } catch (e) {
       console.log(e);
     }

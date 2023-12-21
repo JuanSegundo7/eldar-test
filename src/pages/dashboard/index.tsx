@@ -210,6 +210,7 @@ const Dashboard = () => {
           resource={selectedResource}
           closeModal={setSelectedResource}
           setResource={setResources}
+          setCurrentPage={setCurrentPage}
         />
       )}
       {create && (
