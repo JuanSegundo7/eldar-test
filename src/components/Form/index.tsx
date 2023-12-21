@@ -1,7 +1,5 @@
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
-import Open_eye from "../assets/open-eye.png";
-import Closed_eye from "../assets/closed-eye.png";
 import { useRouter } from "next/router";
 import validationSchema from "../../utils/validation";
 import Image from "next/image";
