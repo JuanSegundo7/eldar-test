@@ -66,7 +66,7 @@ const Filter: React.FC<FilterProps> = ({
               type="text"
               name="title"
               value={filterTitle}
-              className="px-2 bg-eldar-light-grey rounded-lg"
+              className="px-2 bg-eldar-light-grey rounded-lg outline-0"
               placeholder="Titulo"
               onChange={(e) => setFilterTitle(e.target.value)}
             />
@@ -77,7 +77,7 @@ const Filter: React.FC<FilterProps> = ({
               type="text"
               name="title"
               value={filterId}
-              className="px-2 bg-eldar-light-grey rounded-lg"
+              className="px-2 bg-eldar-light-grey rounded-lg outline-0"
               placeholder="ID"
               onChange={(e) => setFilterId(e.target.value)}
             />

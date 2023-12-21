@@ -55,14 +55,14 @@ const CreateForm = ({ closeModal, setResource }: any) => {
             name="title"
             value={createResource.title}
             onChange={handleChange}
-            className="px-2 py-1 bg-eldar-light-grey rounded-lg"
+            className="px-2 py-1 bg-eldar-light-grey rounded-lg outline-0"
             placeholder="Title"
           />
           <textarea
             name="body"
             value={createResource.body}
             onChange={handleChange}
-            className="px-2 py-1 bg-eldar-light-grey rounded-lg h-[150px]"
+            className="px-2 py-1 bg-eldar-light-grey rounded-lg h-[150px] outline-0"
             placeholder="Body"
           />
           <button
